@@ -707,6 +707,7 @@ module Homebrew
         message
       end
 
+      # Adding a comment
       def check_for_non_prefixed_coreutils
         coreutils = Formula["coreutils"]
         return unless coreutils.any_version_installed?
