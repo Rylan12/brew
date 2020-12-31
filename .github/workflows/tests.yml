@@ -9,8 +9,8 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
 jobs:
   syntax:
-    if: github.repository == 'Homebrew/brew'
-    runs-on: ubuntu-latest
+    if: github.repository == 'Rylan12/brew'
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -44,8 +44,8 @@ jobs:
 
   tap-syntax:
     name: tap syntax (Linux)
-    if: startsWith(github.repository, 'Homebrew/')
-    runs-on: ubuntu-latest
+    if: startsWith(github.repository, 'Rylan12/')
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -85,7 +85,7 @@ jobs:
 
   vendored-gems:
     name: vendored gems (Linux)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -105,7 +105,7 @@ jobs:
         run: git diff --stat --exit-code Library/Homebrew/vendor/bundle/ruby
 
   docker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -128,7 +128,7 @@ jobs:
 
   tests:
     name: ${{ matrix.name }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         include:
@@ -165,7 +165,7 @@ jobs:
 
   test-default-formula-linux:
     name: test default formula (Linux)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -177,7 +177,7 @@ jobs:
 
   test-everything:
     name: test everything (macOS)
-    if: startsWith(github.repository, 'Homebrew/')
+    if: startsWith(github.repository, 'Rylan12/')
     runs-on: macos-11.0
     steps:
       - name: Set up Homebrew

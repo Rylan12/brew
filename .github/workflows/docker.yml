@@ -12,7 +12,7 @@ on:
 jobs:
   ubuntu:
     if: startsWith(github.repository, 'Homebrew/')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         version: ["16.04", "18.04", "20.04"]

@@ -19,7 +19,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'stale')
         )
       )
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Mark/Close Stale Issues and Pull Requests
         uses: actions/stale@v3
@@ -38,7 +38,7 @@ jobs:
 
   lock-threads:
     if: startsWith(github.repository, 'Homebrew/') && github.event_name != 'issue_comment'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Lock Outdated Threads
         uses: dessant/lock-threads@63786a6c74ee3cfc4584f36de4360305c55e5126
